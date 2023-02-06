@@ -1,10 +1,8 @@
-function towelSort(arr){
-  let towel=[];
-  for(key in arr)
-  for(key2 in arr[key]) towel.push(arr[key][key2]);
-  return towel;
-}
-
-module.exports = function towelSort (matrix) {
-  return [];
+module.exports = function towelSort(matrix) {
+    let towel=[];
+      for(key in matrix){
+        if(!(key%2)) for(key2 in matrix[key]) towel.push(matrix[key][key2]);
+        else for(let i=matrix[key].length-1; i>=0; i--) towel.push(matrix[key][i]);
+      }
+    return towel;
 }
